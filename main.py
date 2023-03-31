@@ -60,7 +60,10 @@ q to quit
 			size = input("How long should your password be: ")
 			try:
 				size = int(size)
-				print(f"Here is your random password:\n    {generate_password(size)}")
+                                if size<5:
+                                    print("Please enter password length greater than 5!")
+                                else:
+				    print(f"Here is your random password:\n    {generate_password(size)}")
 			except ValueError:
 				print("Enter a number next time!")
 		elif inp.lower() == "a":
